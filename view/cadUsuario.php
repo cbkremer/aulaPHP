@@ -11,7 +11,7 @@
         <title>Cadastro de usuários</title>
     </head>
     <body>
-        <h1>Cadastro de usuário</h1>
+        <h1>Cadastro de Usuários</h1>
         <form action="<?php $cadUsuario->inserir(); ?>" method="POST">
             <input type="text" name="nome" placeholder="Nome aqui...">
             <br/><br/>

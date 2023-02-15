@@ -1,5 +1,4 @@
 <?php
-
 class CUsuario{
     public function inserir(){
         if(isset($_POST['salvar'])){
@@ -21,5 +20,15 @@ class CUsuario{
             unset($sth);
             unset($pdo);
         }
+    }
+    public function getUsuarios(){
+        $pdo = require_once '../pdo/Connection.php';
+        $sql = "select idUsuario, nomeUsuario, usuario, perfilAcesso from usuario";
+        $sth = $pdo->prepare($sql);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        unset($pdo);
+        unset($sth);
+        return $result;
     }
 }
