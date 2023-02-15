@@ -30,7 +30,12 @@
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
                         <td><?php echo $user['perfilAcesso']; ?></td>
-                        <td>Editar | Deletar</td>
+                        <td>Editar | 
+                            <form action="<?php $cadUsuario->deletar(); ?>" method="post">
+                                <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>"/>
+                                <input type="submit" value="Deletar" name="deletar">
+                            </form>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
