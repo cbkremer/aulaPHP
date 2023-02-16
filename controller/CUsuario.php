@@ -31,7 +31,7 @@ class CUsuario{
         unset($sth);
         return $result;
     }
-    public function deletar(){
+    /*public function deletar(){
         if(isset($_POST['deletar'])){
             $id = $_POST['idUsuario'];
             $pdo = require_once '../pdo/Connection.php';
@@ -43,7 +43,7 @@ class CUsuario{
             unset($pdo);
             header('Refresh:0');
         }
-    }
+    }*/
     public function getUserId($id){
         $pdo = require_once '../pdo/Connection.php';
         $sql = "select idUsuario, nomeUsuario, usuario, perfilAcesso from usuario where idUsuario = ?";

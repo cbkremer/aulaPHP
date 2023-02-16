@@ -29,7 +29,16 @@
                         <td><?php echo $user['idUsuario']; ?></td>
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
-                        <td><?php echo $user['perfilAcesso']; ?></td>
+                        <td>
+                            <?php 
+                                if($user['perfilAcesso']=="admin"){
+                                    echo "Administrador";
+                                }
+                                else{
+                                    echo "Usuário";
+                                }
+                            ?>
+                        </td>
                         <td>
                             <form action="editarUser.php" method="post">
                             <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>"/>
