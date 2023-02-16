@@ -12,7 +12,7 @@
         <title>Lista de Usuários</title>
     </head>
     <body>
-       <h2>Lista de Usuários</h2>
+       <h1>Lista de Usuários</h1>
        <table>
             <thead>
                 <tr>
@@ -30,7 +30,11 @@
                         <td><?php echo $user['nomeUsuario']; ?></td>
                         <td><?php echo $user['usuario']; ?></td>
                         <td><?php echo $user['perfilAcesso']; ?></td>
-                        <td>Editar | 
+                        <td>
+                            <form action="editarUser.php" method="post">
+                            <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>"/>
+                                <input type="submit" value="Editar" name="editar">
+                            </form>
                             <form action="../controller/deletarUser.php" method="post">
                                 <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>"/>
                                 <input type="submit" value="Deletar" name="deletar">

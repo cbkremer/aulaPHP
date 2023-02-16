@@ -44,4 +44,15 @@ class CUsuario{
             header('Refresh:0');
         }
     }
+    public function getUserId($id){
+        $pdo = require_once '../pdo/Connection.php';
+        $sql = "select idUsuario, nomeUsuario, usuario, perfilAcesso from usuario where idUsuario = ?";
+        $sth = $pdo->prepare($sql);
+        $sth->bindParam(1, $id, PDO::PARAM_INT);
+        $sth->execute();
+        $result = $sth->fetchAll();
+        unset($pdo);
+        unset($sth);
+        return $result;
+    }
 }
