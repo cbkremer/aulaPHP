@@ -12,7 +12,7 @@
     </head>
     <body>
         <h1>Cadastro de Usuários</h1>
-        <form action="../controller/deletarUser.php" method="POST">
+        <form action="<?php $cadUsuario->inserir(); ?>" method="POST">
             <input type="text" name="nome" placeholder="Nome aqui...">
             <br/><br/>
             <select name="perfilAcesso">

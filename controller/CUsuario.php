@@ -36,7 +36,7 @@ class CUsuario{
             $id = $_POST['idUsuario'];
             $pdo = require_once '../pdo/Connection.php';
             $sql = "delete from usuario where idUsuario = ?";
-            $sth = $pdo->preprare($sql);
+            $sth = $pdo->prepare($sql);
             $sth->bindParam(1, $id, PDO::PARAM_INT);
             $sth->execute();
             unset($sth);

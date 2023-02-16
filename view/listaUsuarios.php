@@ -31,7 +31,7 @@
                         <td><?php echo $user['usuario']; ?></td>
                         <td><?php echo $user['perfilAcesso']; ?></td>
                         <td>Editar | 
-                            <form action="<?php $cadUsuario->deletar(); ?>" method="post">
+                            <form action="../controller/deletarUser.php" method="post">
                                 <input type="hidden" name="idUsuario" value="<?php echo $user['idUsuario']; ?>"/>
                                 <input type="submit" value="Deletar" name="deletar">
                             </form>
